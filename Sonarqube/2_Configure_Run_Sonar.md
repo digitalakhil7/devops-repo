@@ -44,3 +44,8 @@ Administration > Security > users
 <sonar.host.url>http://PUBLIC_IPADDR_OF_SONAR:9000/</sonar.host.url>
 <sonar.login>TOKEN_CREATED</sonar.login>
 ```
+
+## Configure sonar and running in CLI
+```bash
+mvn package sonar:sonar -Dsonar.host.url=http://34.125.58.149:9000  -Dsonar.login=squ_b44fc7c05b9ed8960f2175fe6bde2d7a730c941e -Dsonar.projectKey=petproject25
+```
