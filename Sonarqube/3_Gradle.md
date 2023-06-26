@@ -5,6 +5,11 @@ Pre-req: Java 11, dev branch and use adservice
 
 Add plugin to `build.gradle`
 
+## check multiple java
+```bash
+alternatives --config java
+```
+
 ### To Test
 ```bash
 sh gradlew installDist -Dorg.gradle.java.home=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.i386
