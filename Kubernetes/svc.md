@@ -53,6 +53,7 @@ spec:
 kubectl create -f svc.yaml/pod1.yaml/pod2.yaml
 
 # Check Endpoints, there should be 2 end points.
+# IP: is LoadBalancer IP.
 kubectl describe svc svc1
 
 minikube service svc1 --url
