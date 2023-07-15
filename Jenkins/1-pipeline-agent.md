@@ -62,6 +62,28 @@ pipeline{
     }
 }
 ```
+#### 2 Agents
 ```bash
-
+pipeline{
+    agent{
+        label 'java-slave'
+    }
+    stages{
+        stage('First'){
+            steps{
+                echo 'First'
+                sh 'hostname -i'
+            }
+        }
+        stage('Second'){
+            agent{
+                label 'node-slave'
+            }
+            steps{
+                echo 'Second'
+                sh 'hostname -i'
+            }
+        }
+    }
+}
 ```
