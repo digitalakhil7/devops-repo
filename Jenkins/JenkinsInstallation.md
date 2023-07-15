@@ -17,3 +17,16 @@ yum install jenkins
 systemctl status jenkins
 systemctl start jenkins
 ```
+
+## Important Links
+```bash
+https://www.jenkins.io/doc/book/pipeline/syntax/
+https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/
+```
+
+## Important Points
+```bash
+Linux Commands - sh
+echo - inbuilt
+script - Groovy code
+```
