@@ -1,5 +1,7 @@
 ## Deployment
 Used for RollingUpdates + Monitoring, Load Balancing and Scaling.
+
+To deploy Pods using some Deployment Strategies like Recreate, RollingUpdate(default).
 ### Creating Deployment
 ```bash
 kubectl create deployment --image=httdp httpdep
