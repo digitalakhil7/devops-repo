@@ -58,6 +58,10 @@ pipeline{
 ```
 ### 4. when
 ```bash
+https://www.jenkins.io/doc/book/pipeline/syntax/#when
+```
+**Build-in Conditions - environment, not, equals, branch, allOf**
+```bash
 pipeline{
     agent any
     environment{
