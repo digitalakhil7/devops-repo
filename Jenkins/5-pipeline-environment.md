@@ -36,6 +36,9 @@ pipeline{
 }
 ```
 ### 3. credentials - git example
+**_USR** - to get username
+
+**_PSW** - to get password
 ```bash
 pipeline{
     agent any
