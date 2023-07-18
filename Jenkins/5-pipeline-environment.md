@@ -1,4 +1,4 @@
-## Environment
+## Environment - credentials( ), when - condition, allOf, anyOf
 ### 1. Global and Local Variable ( has more importance )
 ```bash
 pipeline{
