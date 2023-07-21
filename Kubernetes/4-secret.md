@@ -37,6 +37,7 @@ spec:
 kubectl create -f secret.yaml
 kubectl create -f mysql.yaml
 
+kubectl describe pod mydb
 kubectl get pod mydb -o yaml
 kubectl get secret -o yaml
 ```
