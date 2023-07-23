@@ -67,3 +67,15 @@ spec:
             - mountPath: "/var/www/html"
               name: anyname
 ```
+## Checking Persitent Storage in host path and container path
+```bash
+kubectl exec -it pod -- bash
+cd /var/www/html/
+echo "hello akhil" > index.php
+
+minikube ssh
+cd /mydata
+ls
+#index.php
+cat index.php
+```
