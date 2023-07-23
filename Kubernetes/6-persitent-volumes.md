@@ -17,16 +17,6 @@ spec:
       storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: ""apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mypvc
-spec:
-  resources:
-    requests:
-      storage: 10Gi
-  accessModes:
-    - ReadWriteOnce
   storageClassName: ""
 ```
 ## Persistent Volumes
