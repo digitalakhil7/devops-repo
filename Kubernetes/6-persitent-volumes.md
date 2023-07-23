@@ -39,3 +39,31 @@ spec:
   hostPath:
     path: /mydata
 ```
+## Attaching PVC to Deployment
+```bash
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vimdep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: php
+  template:
+    metadata:
+     name: vimpod
+     labels:
+      type: php
+    spec:
+      volumes:
+        - name: anyname
+          persistentVolumeClaim:
+            claimName: mypvc
+      containers:
+        - name: vimcon
+          image: vimal13/apache-webserver-php
+          volumeMounts:
+            - mountPath: "/var/www/html"
+              name: anyname
+```
