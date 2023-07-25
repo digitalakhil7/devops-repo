@@ -1,3 +1,25 @@
+## parameters
+```bash
+pipeline{
+    agent any
+    parameters{
+         string(name: 'NAME', defaultValue: 'Akhil',description: 'Your Name')
+         booleanParam(name: 'APPROVED', defaultValue: true, description: 'Toggle this value')
+         choice(name: 'COUNTRIES', choices: ['India','Austrlia','USA'], description: 'select any country')
+         credentials(name: 'CREDS',required: true, description: 'my creds')
+    }
+    stages{
+        stage('Build'){
+            steps{
+                echo "Hello ${params.NAME}"
+                echo "Approval: ${params.APPROVED}"
+                echo "Country: ${params.COUNTRIES}"
+                echo "Creds: ${params.CREDS}"
+            }
+        }
+    }
+}
+```
 ## input
 ```bash
 pipeline{
