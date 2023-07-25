@@ -156,3 +156,28 @@ pipeline{
     }
 }
 ```
+### 8. anyOf
+**Note:** pr in mbp(Branch Sources - GitHub)
+```bash
+pipeline{
+    agent any
+    environment{
+        DEPLOY_TO = 'production'
+    }
+    stages{
+        stage('Deploy'){
+            when{
+                anyOf{
+                   expression{
+                    BRANCH_NAME ==~ /(release|production)/
+                   }
+                   environment name: 'DEPLOY_TO', value: 'production'
+                }
+            }
+            steps{
+                echo "deployment done"
+            }
+        }
+    }
+}
+```
