@@ -85,9 +85,9 @@ To delete PVC we need to delete POD first because PVC is attached to POD
 kubectl delete pvc mypvc
 kubectl delete pods --all
 ```
-## Reclaim Policy
-**Retain(default)** - **data** is retained but **pv** cannot be reused<br>
-**Recycle** - **pv** can be reused but data is lost<br>
+## Reclaim Policy in PV
+**Retain(default)** - **pv** cannot be reused, but **data** is retained<br>
+**Recycle** - **pv** can be reused but **data** is lost<br>
 **Delete**
 
 ### Retain
