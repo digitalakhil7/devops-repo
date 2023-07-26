@@ -79,3 +79,9 @@ ls
 #index.php
 cat index.php
 ```
+## Deleting PVC
+To delete PVC we need to delete POD first because PVC is attached to POD
+```bash
+kubectl delete pvc mypvc
+kubectl delete pods --all
+```
