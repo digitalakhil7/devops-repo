@@ -114,3 +114,23 @@ kubectl create -f pvc.yaml
 # status shows as released -> available -> bound
 kubectl get pvc
 ```
+## Storage Class
+PV is auto created
+```bash
+kubectl get sc
+kubectl describe sc standard
+```
+### pvc.yaml
+```bash
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mypvc
+spec:
+  resources:
+    requests:
+      storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "standard"
+```
