@@ -38,6 +38,7 @@ spec:
   storageClassName: ""
   hostPath:
     path: /mydata
+  persistentVolumeReclaimPolicy: Retain
 ```
 ## Attaching PVC to Deployment
 ```bash
