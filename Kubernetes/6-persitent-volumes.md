@@ -85,3 +85,32 @@ To delete PVC we need to delete POD first because PVC is attached to POD
 kubectl delete pvc mypvc
 kubectl delete pods --all
 ```
+## Reclaim Policy
+**Retain(default)** - **data** is retained but **pv** cannot be reused<br>
+**Recycle** - **pv** can be reused but data is lost<br>
+**Delete**
+
+### Retain
+```bash
+kubectl delete pvc mypvc
+kubectl delete pods --all
+# check Reclaim Policy
+kubectl get pv
+# pv won't get attached to new pvc because of Retain - Reclaim Policy
+kubectl create -f pvc.yaml
+# status shows as released only
+kubectl get pvc
+``` 
+### Recycle
+```bash
+# change Reclaim Policy to Recycle
+kubectl edit pv mypv
+kubectl delete pvc mypvc
+kubectl delete pods --all
+# check Reclaim Policy
+kubectl get pv
+# pv gets attached to pvc because of Recycle - Reclaim Policy
+kubectl create -f pvc.yaml
+# status shows as released -> available -> bound
+kubectl get pvc
+```
