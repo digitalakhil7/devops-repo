@@ -88,7 +88,7 @@ kubectl delete pods --all
 ## Reclaim Policy in PV
 **Retain(default)** - **pv** cannot be reused, but **data** is retained<br>
 **Recycle** - **pv** can be reused but **data** is lost<br>
-**Delete**
+**Delete** - delete the storage in (EBS)
 
 ### Retain
 ```bash
