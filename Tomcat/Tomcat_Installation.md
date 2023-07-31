@@ -80,7 +80,8 @@ vi /opt/tomcat9/conf/tomcat-users.xml
 <user username="sivaacademy" password="Devops@12345" roles="manager-gui,admin-gui"/>
 ```
 * `manager-gui` ====> we will be having server status and manager app access
-* `admin-gui`   ====> Host Manager 
+* `admin-gui`   ====> Host Manager
+* `manager-script` ===> to deploy apps using Jenkins
 
 * CLick on Host- Manager, by defualt we will be getting `403`
 * If we want to give acces to the host-manager app, perform the below steps
