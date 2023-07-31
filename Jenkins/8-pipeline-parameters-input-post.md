@@ -63,3 +63,35 @@ pipeline{
     }
 }
 ```
+## post - used in pipeline, stage
+```bash
+pipeline{
+    agent any
+    stages{
+        stage('Deploy'){
+            steps{
+                echo "Deployed"
+            }
+        }
+    }
+    post{
+        success{
+            echo "success"
+        }
+        failure{
+            echo "failure"
+        }
+        always{
+            echo "always"
+        }
+        fixed{
+            // build failure fixed
+            echo "fixed now"
+        }
+        changed{
+            // build status changed
+            echo "something changed"
+        }
+    }
+}
+```
