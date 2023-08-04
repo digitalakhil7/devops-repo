@@ -1,5 +1,6 @@
 ## mini project - Git + Maven + Nexus + Tomcat
 ### (readMavenPom, findFiles) - Basic Steps, fileExists - Utility Steps
+### Plugins - Pipeline Utility Steps, Nexus Artifact Uploader
 ```bash
 pipeline{
     agent any
