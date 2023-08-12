@@ -1,5 +1,6 @@
 ## PVC, PV, SC
-SAS - storage, accessModes, storageClassName
+SASP - storage, accessModes, storageClassName, path <br>
+Creating - PVC, PV, Deployment
 ## PVC - PersistentVolumeClaims
 
 ```bash
