@@ -1,5 +1,5 @@
 ## PVC, PV, SC
-SASP - storage, accessModes, storageClassName, path <br>
+SASP - storage, accessModes, storageClassName, PV (path, persistentVolumeReclaimPolicy)<br>
 Creating - PVC, PV, Deployment
 ## PVC - PersistentVolumeClaims
 
