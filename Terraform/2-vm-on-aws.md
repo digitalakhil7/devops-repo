@@ -1,7 +1,13 @@
 ### Steps
 main.tf, init, plan, apply<br>
 Create user in IAM to get access_key and secret_key (Attach policy PowerUserAccess or AdministratorAccess)
-
+### Don't hard code keys
+```bash
+# Install AWS CLI, > aws --version
+aws configure list-profiles
+aws configure
+# Link this creds using profile
+```
 ### main.tf
 ```bash
 # AWS Docs: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
@@ -9,8 +15,9 @@ Create user in IAM to get access_key and secret_key (Attach policy PowerUserAcce
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs#authentication-and-configuration
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIA2QJX"
-  secret_key = "lzh59V0Vh2ikgwmKz"
+  # access_key = "AKIA2QJXHO75BZXJ2JON"
+  # secret_key = "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"
+    profile = "default"
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
