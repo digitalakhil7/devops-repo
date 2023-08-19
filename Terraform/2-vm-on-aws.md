@@ -1,5 +1,6 @@
 ### Steps
-main.tf, init, plan, apply
+main.tf, init, plan, apply<br>
+Create user in IAM to get access_key and secret_key (Attach policy PowerUserAccess or AdministratorAccess)
 
 ### main.tf
 ```bash
