@@ -15,8 +15,8 @@ aws configure
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs#authentication-and-configuration
 provider "aws" {
   region     = "ap-south-1"
-  # access_key = "AKIA2QJXHO75BZXJ2JON"
-  # secret_key = "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"
+  # access_key = "AKIA2QJXHO7"
+  # secret_key = "lzh59V0Vh2ikgwmKzLgIQKx"
     profile = "default"
 }
 
