@@ -26,4 +26,8 @@ resource "aws_instance" "os1" {
 terraform init
 terraform plan
 terraform apply
+
+# Change tag from VmName to Changed
+terraform plan
+terraform apply
 ```
