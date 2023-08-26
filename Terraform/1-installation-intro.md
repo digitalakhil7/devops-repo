@@ -30,7 +30,12 @@ Terraform is used for
 
 ### Terraform Commands
 ivpad - init validate plan apply destroy
-
+```bash
+terraform init -upgrade
+terraform apply -auto-approve
+terraform destroy --auto-approve
+terraform apply -h
+```
 ### Important Terms
 ```bash
 Provisioning / Resources - RAM/CPU/HD + OS
