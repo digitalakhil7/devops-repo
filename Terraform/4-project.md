@@ -58,7 +58,7 @@ resource "aws_instance" "os1" {
   }
 }
 # https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource
-# null_resource - if resource already exists
+# null_resource - if resource already exists (note: need to do terraform init when using null_resource)
 resource "null_resource" "nullvmresource1" {
   connection {
     type     = "ssh"
