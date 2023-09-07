@@ -19,7 +19,7 @@ variable "y" {
 }
 
 output "o1" {
-  value = var.y
+  value = var.y ? "akhil" : "anand"
   # acts as command line argument
 }
 
