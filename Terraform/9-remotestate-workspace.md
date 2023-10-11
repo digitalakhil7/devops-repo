@@ -24,8 +24,8 @@ terraform {
     bucket = "myavbuc"
     key    = "my.tfstate"
     region = "ap-south-1"
-    access_key = "AKIA2QJXHO75FHI7U2QM"
-    secret_key = "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"
+    access_key = "AKIA2QJXHO75F"
+    secret_key = "DfIRZzIKkB6/vuj5bnkEx7my"
     dynamodb_table = "TfStateLock"
   }
 }
