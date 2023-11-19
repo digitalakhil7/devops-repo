@@ -8,16 +8,17 @@ gcloud compute instances create nexusserver --zone=us-west4-b --machine-type=e2-
 # Install Java 1.8
 cd /opt
 yum install wget -y
-wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+yum install java-1.8.0-openjdk.i686 -y
+#wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
 
-yum install jdk-8u131-linux-x64.rpm -y
+#yum install jdk-8u131-linux-x64.rpm -y
 
 # Download Nexus 
 # TO get latest version use the below url
 # https://help.sonatype.com/repomanager3/product-information/download/download-archives---repository-manager-3
-wget https://download.sonatype.com/nexus/3/nexus-3.45.0-01-unix.tar.gz
-tar -xzvf nexus-3.45.0-01-unix.tar.gz
-mv nexus-3.45.0-01 /opt/nexus
+wget https://download.sonatype.com/nexus/3/nexus-3.62.0-01-unix.tar.gz
+tar -xzvf nexus-3.62.0-01-unix.tar.gz
+mv nexus-3.62.0-01 /opt/nexus
 
 # Create a nexus user.
 # Nexus is not advised to run nexus service as a root user.
