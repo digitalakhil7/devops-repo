@@ -87,3 +87,24 @@ pipeline{
     }
 }
 ```
+### Docker Agent - Download Build
+```bash
+pipeline {
+      agent{
+          docker {image 'maven:3.8.6-openjdk-8'}
+      }
+  stages {
+    stage('Download') {
+      steps {
+        git 'https://github.com/digitalakhil7/spring3-mvc-maven-xml-hello-world.git'
+      }
+    }
+    
+    stage('Build') {
+      steps {
+        sh 'mvn clean package'
+      }
+    }
+  }
+}
+```
