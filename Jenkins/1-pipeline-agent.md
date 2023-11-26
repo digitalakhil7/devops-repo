@@ -99,12 +99,17 @@ pipeline {
         git 'https://github.com/digitalakhil7/spring3-mvc-maven-xml-hello-world.git'
       }
     }
-    
-    stage('Build') {
+stage('Build') {
       steps {
         sh 'mvn clean package'
       }
     }
+stage('Deploy') {
+      steps {
+        deploy adapters: [tomcat9(credentialsId: 'tomcat_creds', path: '', url: 'http://34.170.246.173:30601/')], contextPath: '/myapp', onFailure: false, war: '**/*.war'
+      }
+    }
+    
   }
 }
 ```
