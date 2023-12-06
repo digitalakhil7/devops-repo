@@ -31,6 +31,12 @@ echo - inbuilt
 script - Groovy code
 ```
 ## Jenkins Slave
+```bash
+gcloud compute instances create javaslave --zone=us-west4-b --machine-type=e2-small --create-disk=auto-delete=yes,boot=yes,device-name=javaslave,image=projects/centos-cloud/global/images/centos-7-v20221206,mode=rw,size=20
+```
+```bash
+gcloud compute instances create nodeslave --zone=us-west4-b --machine-type=e2-small --create-disk=auto-delete=yes,boot=yes,device-name=nodeslave,image=projects/centos-cloud/global/images/centos-7-v20221206,mode=rw,size=20
+```
 root user, PA yes, restart ssh, mkdir jenkins
 ```bash
 sudo -i
@@ -45,4 +51,33 @@ cd
 mkdir jenkins (/home/akhil/jenkins)
 
 Install Java 11, 17, Maven, Git and required software
+```
+## Steps to install node on ubuntu
+### Update System Packages
+sudo yum update -y
+
+###  Install Development Tools
+sudo yum groupinstall "Development Tools" -y
+
+###  Install Node.js using NodeSource repository:
+```bash
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+sudo yum install -y nodejs
+```
+
+### Verify the Node.js installation:
+node -v
+npm -v
+
+### Install Java 11
+```bash
+yum search jdk
+yum install java-11-openjdk-devel.i686 -y
+```
+
+### Sonar for node
+```bash
+npm run sonar
+# If issues do following
+npm cache clean --force
 ```
