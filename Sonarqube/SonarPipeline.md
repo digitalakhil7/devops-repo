@@ -31,3 +31,30 @@ pipeline {
   }
 }
 ```
+
+### Jeknins Pipeline (without plugin) with hosturl and login in pom.xml
+```bash
+pipeline {
+      agent{
+          docker {image 'maven:3.8.6-openjdk-11'}
+      }
+  stages {
+    stage('Download') {
+      steps {
+        git 'https://github.com/digitalakhil7/spring3-mvc-maven-xml-hello-world.git'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh 'mvn clean package'
+      }
+    }
+    // https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/scanners/jenkins-extension-sonarqube/#jenkins-pipeline
+    stage('SonarQube Analysis') {
+        steps {
+                sh 'mvn sonar:sonar'
+        }
+    }
+  }
+}
+```
