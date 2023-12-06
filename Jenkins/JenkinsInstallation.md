@@ -30,3 +30,19 @@ Linux Commands - sh
 echo - inbuilt
 script - Groovy code
 ```
+## Jenkins Slave
+root user, PA yes, restart ssh, mkdir jenkins
+```bash
+sudo -i
+useradd akhil
+passwd akhil
+usermod -aG wheel akhil (sudo persmissions)
+vim /etc/ssh/sshd_config (PasswordAuthentication yes)
+service sshd restart
+
+sudo - akhil
+cd
+mkdir jenkins (/home/akhil/jenkins)
+
+Install Java 11, 17, Maven, Git and required software
+```
