@@ -1,12 +1,12 @@
 ## Jenkins
 ```bash
-gcloud compute instances create jenkinsmaster --zone=us-west4-b --machine-type=e2-medium --create-disk=auto-delete=yes,boot=yes,device-name=jenkins,image=projects/centos-cloud/global/images/centos-7-v20221206,mode=rw,size=20
+gcloud compute instances create jenkinsmaster --zone=us-west4-b --machine-type=e2-medium --create-disk=auto-delete=yes,boot=yes,device-name=jenkins,image=projects/centos-cloud/global/images/centos-stream-8-v20240110,mode=rw,size=20
 ```
 ```bash
 sudo -i
 yum install wget -y
 
-# official link
+# official link - ***Install Jenkins and Java from official link only***
 https://pkg.jenkins.io/redhat-stable/
 
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
