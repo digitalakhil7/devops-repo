@@ -11,8 +11,8 @@ https://pkg.jenkins.io/redhat-stable/
 
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
-yum install fontconfig java-11-openjdk
-yum install jenkins
+yum install fontconfig java-17-openjdk -y
+yum install jenkins -y
 
 systemctl status jenkins
 systemctl start jenkins
@@ -32,10 +32,10 @@ script - Groovy code
 ```
 ## Jenkins Slave
 ```bash
-gcloud compute instances create javaslave --zone=us-west4-b --machine-type=e2-small --create-disk=auto-delete=yes,boot=yes,device-name=javaslave,image=projects/centos-cloud/global/images/centos-7-v20221206,mode=rw,size=20
+gcloud compute instances create javaslave --zone=us-west4-b --machine-type=e2-small --create-disk=auto-delete=yes,boot=yes,device-name=javaslave,image=projects/centos-cloud/global/images/centos-stream-8-v20240110,mode=rw,size=20
 ```
 ```bash
-gcloud compute instances create nodeslave --zone=us-west4-b --machine-type=e2-small --create-disk=auto-delete=yes,boot=yes,device-name=nodeslave,image=projects/centos-cloud/global/images/centos-7-v20221206,mode=rw,size=20
+gcloud compute instances create nodeslave --zone=us-west4-b --machine-type=e2-small --create-disk=auto-delete=yes,boot=yes,device-name=nodeslave,image=projects/centos-cloud/global/images/centos-stream-8-v20240110,mode=rw,size=20
 ```
 root user, PA yes, restart ssh, mkdir jenkins
 ```bash
@@ -50,6 +50,7 @@ sudo - akhil
 cd
 mkdir jenkins (/home/akhil/jenkins)
 
+yum install fontconfig java-17-openjdk -y
 Install Java 11, 17, Maven, Git and required software
 ```
 ## Steps to install node on ubuntu
