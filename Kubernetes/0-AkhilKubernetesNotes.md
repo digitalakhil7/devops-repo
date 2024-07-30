@@ -20,7 +20,7 @@ k get svc
 Browser: ip:port(from svc)
 ```
 ## ReplicationController(Old) - TR (Template, Replicas)
-High Availability - a new pod is created automatically if a pod is deleted <br>
+High Availability / Monitoring - a new pod is created automatically if a pod is deleted <br>
 Load Balancing & Scaling
 ```
 apiVersion: v1
@@ -51,7 +51,8 @@ k get svc
 Browser: ip:port(from svc)
 ```
 ## ReplicaSet(New) - TRS ( Template, Replicas, Selector(matchLabels) )
-High Availability - a new pod is created automatically if a pod is deleted <br>
+**Note:** labels in matchLabels and template should match <br>
+High Availability / Monitoring - a new pod is created automatically if a pod is deleted <br>
 Load Balancing & Scaling
 ```
 apiVersion: apps/v1
@@ -92,4 +93,9 @@ change replicas in yaml file and
 k apply -f rs.yaml
 (or)
 k scale rs rs-name --replicas=4
+```
+## Deployment
+ReplicaSet (Monitoring, LB, Scaling) + Rolling Update
+```
+yaml file same as ReplicaSet, replace kind with Deployment
 ```
