@@ -51,9 +51,10 @@ k get svc
 Browser: ip:port(from svc)
 ```
 ## ReplicaSet(New) - TRS ( Template, Replicas, Selector(matchLabels) )
-**Note:** labels in matchLabels and template should match <br>
+Ensures that there are n replicas running <br>
 High Availability / Monitoring - a new pod is created automatically if a pod is deleted <br>
-Load Balancing & Scaling
+Load Balancing & Scaling <br>
+**Note:** labels in matchLabels and template should match <br>
 ```
 apiVersion: apps/v1
 kind: ReplicaSet
