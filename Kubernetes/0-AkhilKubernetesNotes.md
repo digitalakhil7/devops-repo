@@ -94,12 +94,15 @@ k apply -f rs.yaml
 (or)
 k scale rs rs-name --replicas=4
 ```
-## Deployment
-ReplicaSet (Monitoring, LB, Scaling) + Rolling Update
+## Deployment - TRS ( Template, Replicas, Selector(matchLabels) )
+Pod + ReplicaSet (Monitoring, LB, Scaling) + Rolling Update
 ```
 yaml file same as ReplicaSet, replace kind with Deployment
 ```
 ## Service
+NodePort <br>
+ClusterIP (default) <br>
+LoadBalancer
 ### NodePort
 ![1-Service-Ports](https://github.com/user-attachments/assets/e0a51e18-ca69-422a-98c9-d42c5e8eed6c)
 #### Pre-requisite (POD)
