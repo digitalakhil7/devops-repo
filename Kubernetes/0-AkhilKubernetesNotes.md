@@ -133,3 +133,35 @@ spec:
     type: front-end
     app: myapp
 ```
+#### ClusterIP service
+doesn't have nodePort
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-name
+spec:
+  type: ClusterIP
+  ports:
+    - targetPort: 80 # (optional) targetPort = port
+      port: 80 # (mandatory)
+  selector:
+    type: front-end
+    app: myapp
+```
+#### LoadBalancer service
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-name
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: 80 # (optional) targetPort = port
+      port: 80 # (mandatory)
+      nodePort: 30003 #(optional) 30000 to 32767
+  selector:
+    type: front-end
+    app: myapp
+```
