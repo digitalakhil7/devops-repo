@@ -99,3 +99,37 @@ ReplicaSet (Monitoring, LB, Scaling) + Rolling Update
 ```
 yaml file same as ReplicaSet, replace kind with Deployment
 ```
+## Service
+### NodePort
+![1-Service-Ports](https://github.com/user-attachments/assets/e0a51e18-ca69-422a-98c9-d42c5e8eed6c)
+#### Pre-requisite (POD)
+**Note:** labels in **POD** and labels in **selector** of service should match
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podname
+  labels:
+    type: front-end
+    app: myapp
+spec:
+  containers:
+    - name: containername
+      image: nginx
+```
+#### NodePort service
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-name
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80 # (optional) targetPort = port
+      port: 80 # (mandatory)
+      nodePort: 30002 #(optional) 30000 to 32767
+  selector:
+    type: front-end
+    app: myapp
+```
