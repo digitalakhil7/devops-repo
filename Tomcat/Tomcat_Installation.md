@@ -104,6 +104,13 @@ modifyy port to 8085
 ```
 * If we perform any changes in `server.xml` , we need to restart tomcat.
 
+## Akhil Notes
+```
+To Access Server Status and Manager App : /tomcat/webapps/manager/META-INF/context.xml
+To Access Host Manager : /tomcat/webapps/host-manager/META-INF/context.xml
 
-
+(/tomcat/conf/tomcat-users.xml)
+To Login Server Status and Manager App : manager-gui
+To Login **Host Manager**: admin-gui
+```
 
